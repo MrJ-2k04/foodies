@@ -7,7 +7,7 @@ import macncheeseImg from '@/assets/macncheese.jpg';
 import pizzaImg from '@/assets/pizza.jpg';
 import schnitzelImg from '@/assets/schnitzel.jpg';
 import tomatoSaladImg from '@/assets/tomato-salad.jpg';
-import styles from './ImageSlideshow.module.css';
+import classes from './ImageSlideshow.module.css';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
@@ -35,12 +35,12 @@ function ImageSlideshow() {
         return () => clearInterval(interval);
     }, []);
 
-    return (<div className={styles.slideshow}>
+    return (<div className={classes.slideshow}>
         {images.map((image, index) => (
             <Image
                 key={index}
                 src={image.image}
-                className={index === currentImageIndex ? styles.active : ''}
+                className={index === currentImageIndex ? classes.active : ''}
                 alt={image.alt}
             />
         ))}
